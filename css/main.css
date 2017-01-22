@@ -1,28 +1,38 @@
 body {
   font-family: "Open Sans", "Arial", sans-serif;
-  background-color: #89f0de;
   color: #de89f0;
   margin-top: 20px;
-  background: url(https://hd.unsplash.com/photo-1455621613471-56c7fcc60f22) no-repeat; }
+  background: url(https://hd.unsplash.com/photo-1455621613471-56c7fcc60f22) no-repeat; 
+}
 
 header {
   font-family: "Londrina Shadow", sans-serif;
   text-align: center;
   font-size: 50px; 
-  }
+  top: 150px;
+}
+
+section {
+  top: 150px;
+}
 
 button {
   color: black;
   background-color: #f0de89; 
 }
 
-h4 {
-  text-align: center; }
-
-footer {
-  text-align: right;
-  margin-top: 100px;
+button:hover {
+  background-color: #de89f0; 
 }
 
+h4 {
+  text-align: center; 
+}
 
-/*# sourceMappingURL=main.css.map */
+footer {
+    position: fixed;
+    right: 20px;
+    bottom: 0;
+    left: 0;
+    text-align: right;
+}

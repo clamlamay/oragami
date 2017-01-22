@@ -1,16 +1,13 @@
-$(document).ready(function() {
-	alert('Time to multiply!');
-});
-
-
 var timerElement = $('timer');
-var count = 31;
+var count = 11;
 var counter = setInterval(timer, 1000); 
 var score = 0;
+var gotName = false;
+
 
 
 function getScore() {
-    $( "#score" ).text("Current score:  " + score);
+  $( "#score" ).text("Current score:  " + score);
 };
 getScore();
 
@@ -18,30 +15,21 @@ getScore();
 function getName() {
     var username = prompt('What is your name?');
     $( "#name" ).text( "Welcome, " + username + "!");
+    alert('Time to multiply!');
 };
 getName();
 
-// var gotName = false;
-// while(gotName == false){
-//   var userName = prompt("Yo passenger! What's your name?");
-
-//   if ( confirm("Are you sure your name is " + userName + "?")){
-//   alert("’Sup " + userName + "!");
-//   gotName = true;
-//   }
-// } 
-
 
 function timer(){
- 	count = count-1;
- 	if (count <= 0)
- 	{
-    clearInterval(counter);
-    return;
- 	}
- 	$("#timer").text(count);
+  count = count-1;
+  if (count <= 0) {
+  clearInterval(counter);
+  alert('Game Over');
+  }
+  $("#timer").text("Timer: " + count);
 };
 timer();
+
 
 var questions = {};
     questions.one = 'What is 8 x 8?';
@@ -57,18 +45,15 @@ var answers = {};
     answers.four = '16';
     answers.five = '28';
  
-for (var prop in questions) { //prop can be any name
-    //console.log(prop);
+for (var prop in questions) { 
+
     var val = document.getElementById('question');
     val.textContent = questions[prop];
-    console.log(val);
 }
 
-for (var prop in answers) { //prop can be any name
-    //console.log(prop);
+for (var prop in answers) { 
     var val = document.getElementById('one');
     val.textContent = answers[prop];
-    console.log(val);
 }
 
 var buttonNumberTwo = document.getElementById('two');
@@ -97,88 +82,23 @@ function buttonTwo(min, max) {
 }
 buttonNumberTwo.textContent = buttonTwo(1, 90);
 
-// // var randomQuestion = questions[Math.floor(questions.length * Math.random())];
-
-// function questions(){
-// 	var questionElement = ($'#question');
-// 	($'#question').html("What is 8x8?");
-// }
-	
-// $('#question').text(questionsArray)
-// $('#one').text(choicesArray[0]);
-// $('#two').text(choicesArray[0]);
-// $('#three').text(choicesArray[0]);
-// $('#four').text(choicesArray[0]);
-// // }
-
-// $.each([questionsArray], function(i, question ) {
-//   $('#question').text(question[3]);
-// });
-
-// questions();
-
-// Button hover - color change - works but not when i save the JS
-
-// // function buttonHover(){
-// 	var thirdButton = $('#one');
-// 	thirdButton.on('click', function(){
-// 	console.log('this button is working');
-// 	thirdButton.css('background-color', '#de89f0');
-// });
-// // buttonHover();
-
 $('one').click( function(){
   var buttonCount = $('#score');
   buttonCount += 1;
-  console.log(score);
 });
-
-// 	var button = $('button');
-// 	button.hover(function(){
-//     button.css("background-color", "pink");
-//     });
-
-//     , function(){
-//     $(this).css("background-color", "pink");
-// });
-// }
-
-
-// var player = {
-//   score: 0,
-
-//   scorePoint: function(score){
-//   	currentScore = $('#score');
-//   	this.score = this.score + 1;
-//     this.scorePoint.push(score)
-//     currentScore.text = this.score;
-  
-// 	$('#one').click(function(){
-// 	alert("The Button was clicked.");
-//     	if(click === '#one'){
-//      	var currentScore = $('#score');
-//      	this.score = this.score + 1;
-//      	currentScore.text = this.score;
-//      	console.log(this.score);
-//     };
-// }
-	// winGame: function (){
-	// 	if(this.score === 5)
-	// 	alert('You Won!');
-	// }
-// };
 
 $('#one').click(function(){
-	alert("Correct.");
+  alert("Correct.");
 });
 $('#two').click(function(){
-	alert("Wrong.");
+  alert("Wrong.");
 });
 $('#three').click(function(){
-	alert("Wrong.");
+  alert("Wrong.");
 });
 $('#four').click(function(){
-	alert("Wrong.");
+  alert("Wrong.");
 });
+
 
 
