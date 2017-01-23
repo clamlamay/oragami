@@ -1,10 +1,7 @@
 var timerElement = $('timer');
-var count = 11;
+var count = 61;
 var counter = setInterval(timer, 1000); 
 var score = 0;
-var gotName = false;
-
-
 
 function getScore() {
   $( "#score" ).text("Current score:  " + score);
@@ -14,11 +11,10 @@ getScore();
 
 function getName() {
     var username = prompt('What is your name?');
-    $( "#name" ).text( "Welcome, " + username + "!");
+    $("#name").text( "Welcome, " + username + "!");
     alert('Time to multiply!');
 };
 getName();
-
 
 function timer(){
   count = count-1;
@@ -30,75 +26,98 @@ function timer(){
 };
 timer();
 
-
-var questions = {};
-    questions.one = 'What is 8 x 8?';
-    questions.two ='What is 9 x 7?';
-    questions.three = 'What is 10 x 10?';
-    questions.four = 'What is 2 x 8?';
-    questions.five = 'What is 4 x 7?';
-
-var answers = {};
-    answers.one = '64';
-    answers.two = '63';
-    answers.three = '100';
-    answers.four = '16';
-    answers.five = '28';
+// function getMathQuestion(){
+//   var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+//   var valueOne = numbers[Math.floor(Math.random() * numbers.length)];
+//   var valueTwo = numbers[Math.floor(Math.random() * numbers.length)];
+//   var answer = valueOne * valueTwo;
+//   console.log(valueOne);
+//   console.log(valueTwo);
+//   console.log('What is ' + valueOne + ' x ' + valueTwo + '?');
+//   console.log(valueOne * valueTwo);
+//   $("#question").text('What is ' + valueOne + ' x ' + valueTwo + '?');
+// };
+// getMathQuestion();
  
-for (var prop in questions) { 
-
-    var val = document.getElementById('question');
-    val.textContent = questions[prop];
-}
-
-for (var prop in answers) { 
-    var val = document.getElementById('one');
-    val.textContent = answers[prop];
-}
-
-var buttonNumberTwo = document.getElementById('two');
-function buttonTwo(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-buttonNumberTwo.textContent = buttonTwo(1, 90);
 
 
-var buttonNumberTwo = document.getElementById('three');
-function buttonTwo(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-buttonNumberTwo.textContent = buttonTwo(1, 90);
+// function getMathQuestion(){
+//   var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+//   var valueOne = numbers[Math.floor(Math.random() * numbers.length)];
+//   var valueTwo = numbers[Math.floor(Math.random() * numbers.length)];
+//   var answer = valueOne * valueTwo;
+//   console.log(valueOne);
+//   console.log(valueTwo);
+//   console.log('What is ' + valueOne + ' x ' + valueTwo + '?');
+//   console.log(valueOne * valueTwo);
+//   $("#question").text('What is ' + valueOne + ' x ' + valueTwo + '?');
+
+//   var buttonOne = $('button#one');
+//   var buttonTwo = $('button#two');
+//   var buttonThree = $('button#three'); 
+//   var buttonFour = $('button#four');
+//   var randomAnswers =[buttonOne, buttonTwo, buttonThree, buttonFour, answer];
+
+//   $('button').text(answer);
+//   $('button').click(function(answer){
+//       alert("You are correct");
+//   });
+// };
 
 
-var buttonNumberTwo = document.getElementById('four');
-function buttonTwo(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-buttonNumberTwo.textContent = buttonTwo(1, 90);
+function getMathQuestion(){
+  var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+  var randomValues = [];
+  var randomAnswers = [];
+  var randomArray = [];
+  var valueOne = numbers[Math.floor(Math.random() * numbers.length)];
+  var valueTwo = numbers[Math.floor(Math.random() * numbers.length)];
+  var answer = valueOne * valueTwo;
+  var button = $('button');
+  randomAnswers.push(answer)
+  console.log(valueOne);
+  console.log(valueTwo);
+  console.log('What is ' + valueOne + ' x ' + valueTwo + '?');
+  console.log('This is the Answer: ' + valueOne * valueTwo);
+  $("#question").text('What is ' + valueOne + ' x ' + valueTwo + '?');
 
-$('one').click( function(){
-  var buttonCount = $('#score');
-  buttonCount += 1;
-});
+  var randomNumberOne = Math.floor(Math.random() * 100);
+  console.log(randomNumberOne)
+  randomValues.push(randomNumberOne);
 
-$('#one').click(function(){
-  alert("Correct.");
-});
-$('#two').click(function(){
-  alert("Wrong.");
-});
-$('#three').click(function(){
-  alert("Wrong.");
-});
-$('#four').click(function(){
-  alert("Wrong.");
-});
+  var randomNumberTwo = Math.floor(Math.random() * 100);
+  console.log(randomNumberTwo)
+  randomValues.push(randomNumberTwo);  
+
+  var randomNumberThree = Math.floor(Math.random() * 100);
+  console.log(randomNumberThree)
+  randomValues.push(randomNumberThree);    
+
+  var gameAnswers = randomValues.concat(randomAnswers);
+  console.log(gameAnswers);
+  gameAnswers.sort(function(a, b){return 0.5 - Math.random()});
+  console.log(gameAnswers);
+  console.log(gameAnswers[0]);
+  console.log(gameAnswers[1]);
+  console.log(gameAnswers[2]);
+  console.log(gameAnswers[3]);
+
+  $('button#one').text(gameAnswers[0]);
+  $('button#two').text(gameAnswers[1]);
+  $('button#three').text(gameAnswers[2]);
+  $('button#four').text(gameAnswers[3]);
+  
+  $('button').click(function(){
+    if (answer === false) {
+      alert("Try Again");
+    } else {
+      alert("You are correct")
+    }
+  });
+};
+getMathQuestion();
+
+
 
 
 
