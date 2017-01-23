@@ -36,6 +36,7 @@ function getMathQuestion(){
     var valueTwo = numbers[Math.floor(Math.random() * numbers.length)];
     var answer = valueOne * valueTwo;
     var button = $('button');
+    
     randomAnswers.push(answer)
     console.log(valueOne);
     console.log(valueTwo);
@@ -79,14 +80,13 @@ function getMathQuestion(){
         alert("Correct!");
         score = score + 5;
         $("#score").text("Score: " + score);
-        // getMathQuestion();
+        getMathQuestion();
       } else {
         alert("Try Again.")
       }
     });
   };
 getMathQuestion();
-
 
 
 
