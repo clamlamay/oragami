@@ -74,7 +74,6 @@ function getMathQuestion(){
     // console.log("This is the final answer: " + answer);
     
     $('button').on("click", function(){
-        gameAnswers
       // console.log(this.innerHTML, "After Click");
       // console.log(typeof this);
       // console.log(typeof answer);
@@ -93,7 +92,7 @@ function getMathQuestion(){
             gameAnswers = [];
             // console.log(gameAnswers, 'Game Answers');
             $( "#score" ).text("Current score:  " + score);
-            return getMathQuestion();           
+            getMathQuestion();           
         } else {
             alert("Try Again.");
             score--;
