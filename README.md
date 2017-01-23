@@ -4,8 +4,7 @@ Multiplication by 'Oragami Games'
 
 Contributors:
 
-Lead HTML/CSS - Christopher Lamlamay
-Lead Javascript - Traci Williams
+Lead HTML/CSS - Christopher Lamlamay | Lead Javascript - Traci Williams
 
 ### About: 
 
@@ -32,9 +31,6 @@ Practice your third grade math skills with our simple multiplication game.
 
 ### Update:
 
-The game has been updated from Javascript to jQuery. 
-Less code and easy on the eyes.
-
-This game made me realize that I still count on my fingers.
+The game has been updated from Javascript to jQuery. Less code and easy on the eyes. This game made me (Christopher) realize that I still count on my fingers.
 
 
